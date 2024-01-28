@@ -1,0 +1,25 @@
+{
+  "footer": "\n\tcd {{@name}}\n\t{{@packageManager}} run dev",
+  "prompts": [
+    {
+      "name": "eslint",
+      "type": "toggle",
+      "message": "Do you want to use ESLint?",
+      "initial": false
+    }
+  ],
+  "actions": [
+    {
+      "type": "exec",
+      "command": "rm .eslintrc.json",
+      "when": ["eslint", "===", false],
+      "os": "!win32"
+    },
+    {
+      "type": "exec",
+      "command": "del .eslintrc.json",
+      "when": ["eslint", "===", false],
+      "os": "win32"
+    }
+  ]
+}
