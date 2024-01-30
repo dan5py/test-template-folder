@@ -12,13 +12,13 @@
     {
       "type": "exec",
       "command": "rm .eslintrc.json",
-      "when": ["eslint", "===", false],
+      "when": "!eslint",
       "os": "!win32"
     },
     {
       "type": "exec",
       "command": "del .eslintrc.json",
-      "when": ["eslint", "===", false],
+      "when": "!eslint",
       "os": "win32"
     }
   ]
